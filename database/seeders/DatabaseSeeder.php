@@ -16,6 +16,12 @@ class DatabaseSeeder extends Seeder
         // User::factory(10)->create();
 
       \App\Models\Article::factory(20)->create();
+      \App\Models\Comment::factory(40)->create();
+
+      $list = ['News', 'Tech', 'Web', 'App', 'Oss'];
+      foreach($list as $name){
+        \App\Models\Category::create(['name' => $name]);
+      }
        
     }
 }
